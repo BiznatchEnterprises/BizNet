@@ -1,0 +1,326 @@
+---------------------------------------------
+PIC ASSEMBLER LISTING
+Line    Address Opcode  Instruction
+---------------------------------------------
+0001    0000            ; Begin
+0002    0000            	R0L EQU 0x20
+0003    0000            	R0H EQU 0x21
+0004    0000            	R1L EQU 0x22
+0005    0000            	R1H EQU 0x23
+0006    0000            	R2L EQU 0x24
+0007    0000            	R2H EQU 0x25
+0008    0000            	R3L EQU 0x26
+0009    0000            	R3H EQU 0x27
+0010    0000            	R4L EQU 0x28
+0011    0000            	R4H EQU 0x29
+0012    0000            	R5L EQU 0x2A
+0013    0000            	R5H EQU 0x2B
+0014    0000            	ORG 0x0000
+0015    0000    118A    	BCF PCLATH,3
+0016    0001    120A    	BCF PCLATH,4
+0017    0002    2805    	GOTO L0002
+0018    0003            	ORG 0x0004
+0019    0004    0009    	RETFIE
+0020    0005            L0002:
+0021    0005            ; 1: Dim sepbyte As Byte
+0022    0005            ;       The address of 'sepbyte' is 0x2E
+0023    0005            	sepbyte EQU 0x2E
+0024    0005            ; 2: Dim ipao1 As Byte
+0025    0005            ;       The address of 'ipao1' is 0x2F
+0026    0005            	ipao1 EQU 0x2F
+0027    0005            ; 3: Dim ipao2 As Byte
+0028    0005            ;       The address of 'ipao2' is 0x30
+0029    0005            	ipao2 EQU 0x30
+0030    0005            ; 4: Dim ipao3 As Byte
+0031    0005            ;       The address of 'ipao3' is 0x31
+0032    0005            	ipao3 EQU 0x31
+0033    0005            ; 5: Dim ipao4 As Byte
+0034    0005            ;       The address of 'ipao4' is 0x32
+0035    0005            	ipao4 EQU 0x32
+0036    0005            ; 6: Dim ipbo1 As Byte
+0037    0005            ;       The address of 'ipbo1' is 0x33
+0038    0005            	ipbo1 EQU 0x33
+0039    0005            ; 7: Dim ipbo2 As Byte
+0040    0005            ;       The address of 'ipbo2' is 0x34
+0041    0005            	ipbo2 EQU 0x34
+0042    0005            ; 8: Dim ipbo3 As Byte
+0043    0005            ;       The address of 'ipbo3' is 0x35
+0044    0005            	ipbo3 EQU 0x35
+0045    0005            ; 9: Dim ipbo4 As Byte
+0046    0005            ;       The address of 'ipbo4' is 0x36
+0047    0005            	ipbo4 EQU 0x36
+0048    0005            ; 10: Dim ipco1 As Byte
+0049    0005            ;       The address of 'ipco1' is 0x37
+0050    0005            	ipco1 EQU 0x37
+0051    0005            ; 11: Dim ipco2 As Byte
+0052    0005            ;       The address of 'ipco2' is 0x38
+0053    0005            	ipco2 EQU 0x38
+0054    0005            ; 12: Dim ipco3 As Byte
+0055    0005            ;       The address of 'ipco3' is 0x39
+0056    0005            	ipco3 EQU 0x39
+0057    0005            ; 13: Dim ipco4 As Byte
+0058    0005            ;       The address of 'ipco4' is 0x3A
+0059    0005            	ipco4 EQU 0x3A
+0060    0005            ; 14: Dim packsa As Byte
+0061    0005            ;       The address of 'packsa' is 0x3B
+0062    0005            	packsa EQU 0x3B
+0063    0005            ; 15: Dim packsb As Byte
+0064    0005            ;       The address of 'packsb' is 0x3C
+0065    0005            	packsb EQU 0x3C
+0066    0005            ; 16: Dim packsc As Byte
+0067    0005            ;       The address of 'packsc' is 0x3D
+0068    0005            	packsc EQU 0x3D
+0069    0005            ; 17: Dim databuffa(80) As Byte
+0070    0005            ;       The address of 'databuffa' is 0xA0
+0071    0005            	databuffa EQU 0xA0
+0072    0005            ; 18: Dim databuffb(80) As Byte
+0073    0005            ;       The address of 'databuffb' is 0x110
+0074    0005            	databuffb EQU 0x110
+0075    0005            ; 19: Dim databuffc(80) As Byte
+0076    0005            ;       The address of 'databuffc' is 0x190
+0077    0005            	databuffc EQU 0x190
+0078    0005            ; 20: Dim tempbyte(25) As Byte
+0079    0005            ;       The address of 'tempbyte' is 0x3E
+0080    0005            	tempbyte EQU 0x3E
+0081    0005            ; 21: Dim tempbit1 As Bit
+0082    0005            ;       The address of 'tempbit1' is 0x2C,0
+0083    0005            ; 22: Dim tempbit2 As Bit
+0084    0005            ;       The address of 'tempbit2' is 0x2C,1
+0085    0005            ; 23: Dim tempbit3 As Bit
+0086    0005            ;       The address of 'tempbit3' is 0x2C,2
+0087    0005            ; 24: Dim tempbit4 As Bit
+0088    0005            ;       The address of 'tempbit4' is 0x2C,3
+0089    0005            ; 25: Dim tempbit5 As Bit
+0090    0005            ;       The address of 'tempbit5' is 0x2C,4
+0091    0005            ; 26: Dim tempbit6 As Bit
+0092    0005            ;       The address of 'tempbit6' is 0x2C,5
+0093    0005            ; 27: Dim tempbit7 As Bit
+0094    0005            ;       The address of 'tempbit7' is 0x2C,6
+0095    0005            ; 28: Dim tempbit8 As Bit
+0096    0005            ;       The address of 'tempbit8' is 0x2C,7
+0097    0005            ; 29: Dim otnd As Bit
+0098    0005            ;       The address of 'otnd' is 0x2D,0
+0099    0005            ; 30: Dim ifnd As Bit
+0100    0005            ;       The address of 'ifnd' is 0x2D,1
+0101    0005            ; 31: otnd = PORTD.2
+0102    0005    1908    	BTFSC 0x08,2
+0103    0006    142D    	BSF 0x2D,0
+0104    0007    1D08    	BTFSS 0x08,2
+0105    0008    102D    	BCF 0x2D,0
+0106    0009            ; 32: ifnd = PORTD.3
+0107    0009    1988    	BTFSC 0x08,3
+0108    000A    14AD    	BSF 0x2D,1
+0109    000B    1D88    	BTFSS 0x08,3
+0110    000C    10AD    	BCF 0x2D,1
+0111    000D            ; 33: 
+0112    000D            ; 34: 
+0113    000D            ; 35: 'RD3 = out to network
+0114    000D            ; 36: 'RD2 = in frm network
+0115    000D            ; 37: 
+0116    000D            ; 38: tempbit1 = 1
+0117    000D    142C    	BSF 0x2C,0
+0118    000E            ; 39: tempbit2 = 0
+0119    000E    10AC    	BCF 0x2C,1
+0120    000F            ; 40: 
+0121    000F            ; 41: TRISB.0 = 0 'set all port b pins to output
+0122    000F    1683    	BSF STATUS,RP0
+0123    0010    1006    	BCF 0x06,0
+0124    0011    1283    	BCF STATUS,RP0
+0125    0012            ; 42: TRISB.1 = 0
+0126    0012    1683    	BSF STATUS,RP0
+0127    0013    1086    	BCF 0x06,1
+0128    0014    1283    	BCF STATUS,RP0
+0129    0015            ; 43: TRISD.3 = 0 'set Out To Network Pin to output
+0130    0015    1683    	BSF STATUS,RP0
+0131    0016    1188    	BCF 0x08,3
+0132    0017    1283    	BCF STATUS,RP0
+0133    0018            ; 44: TRISD.2 = 0 'set In Frm Network Pin to Input
+0134    0018    1683    	BSF STATUS,RP0
+0135    0019    1108    	BCF 0x08,2
+0136    001A    1283    	BCF STATUS,RP0
+0137    001B            ; 45: 
+0138    001B            ; 46: '================================
+0139    001B            ; 47: startprogram: 
+0140    001B            L0001:
+0141    001B            ; 48: 
+0142    001B            ; 49: '--write data--
+0143    001B            ; 50: If TRISD.3 = 1 Then 'verify if pin set to input
+0144    001B    1683    	BSF STATUS,RP0
+0145    001C    1D88    	BTFSS 0x08,3
+0146    001D    282C    	GOTO L0003
+0147    001E    1283    	BCF STATUS,RP0
+0148    001F            ; 51: High PORTB.0 'DISPLAY DATA SENT STATUS on PortB 3 Pin
+0149    001F    1406    	BSF PORTB,0
+0150    0020    1683    	BSF STATUS,RP0
+0151    0021    1006    	BCF TRISB,0
+0152    0022    1283    	BCF STATUS,RP0
+0153    0023            ; 52: Low PORTB.1
+0154    0023    1086    	BCF PORTB,1
+0155    0024    1683    	BSF STATUS,RP0
+0156    0025    1086    	BCF TRISB,1
+0157    0026    1283    	BCF STATUS,RP0
+0158    0027            ; 53: TRISD.3 = 0 'set pin to output
+0159    0027    1683    	BSF STATUS,RP0
+0160    0028    1188    	BCF 0x08,3
+0161    0029    1283    	BCF STATUS,RP0
+0162    002A            ; 54: PORTD.3 = 1 'set pin to high
+0163    002A    1588    	BSF 0x08,3
+0164    002B            ; 55: Else
+0165    002B    2836    	GOTO L0004
+0166    002C    301F    L0003:	MOVLW 0x1F
+0167    002D    0583    	ANDWF STATUS,F
+0168    002E            ; 56: Low PORTB.0 'Display Out To Network (Ready To Send) Status Failed
+0169    002E    1006    	BCF PORTB,0
+0170    002F    1683    	BSF STATUS,RP0
+0171    0030    1006    	BCF TRISB,0
+0172    0031    1283    	BCF STATUS,RP0
+0173    0032            ; 57: High PORTB.1
+0174    0032    1486    	BSF PORTB,1
+0175    0033    1683    	BSF STATUS,RP0
+0176    0034    1086    	BCF TRISB,1
+0177    0035    1283    	BCF STATUS,RP0
+0178    0036            ; 58: Endif
+0179    0036    301F    L0004:	MOVLW 0x1F
+0180    0037    0583    	ANDWF STATUS,F
+0181    0038            ; 59: '--------------
+0182    0038            ; 60: WaitMs 1000
+0183    0038    30E8    	MOVLW 0xE8
+0184    0039    00A0    	MOVWF R0L
+0185    003A    3003    	MOVLW 0x03
+0186    003B    00A1    	MOVWF R0H
+0187    003C    207B    	CALL W001
+0188    003D            ; 61: '--READ DATA---
+0189    003D            ; 62: If TRISD.2 = 0 Then
+0190    003D    1683    	BSF STATUS,RP0
+0191    003E    1908    	BTFSC 0x08,2
+0192    003F    2867    	GOTO L0005
+0193    0040    1283    	BCF STATUS,RP0
+0194    0041            ; 63: If PORTD.2 = 1 Then
+0195    0041    1D08    	BTFSS 0x08,2
+0196    0042    284F    	GOTO L0006
+0197    0043            ; 64: High PORTB.2
+0198    0043    1506    	BSF PORTB,2
+0199    0044    1683    	BSF STATUS,RP0
+0200    0045    1106    	BCF TRISB,2
+0201    0046    1283    	BCF STATUS,RP0
+0202    0047            ; 65: Low PORTB.3
+0203    0047    1186    	BCF PORTB,3
+0204    0048    1683    	BSF STATUS,RP0
+0205    0049    1186    	BCF TRISB,3
+0206    004A    1283    	BCF STATUS,RP0
+0207    004B            ; 66: TRISD.2 = 1
+0208    004B    1683    	BSF STATUS,RP0
+0209    004C    1508    	BSF 0x08,2
+0210    004D    1283    	BCF STATUS,RP0
+0211    004E            ; 67: Else
+0212    004E    2859    	GOTO L0007
+0213    004F    301F    L0006:	MOVLW 0x1F
+0214    0050    0583    	ANDWF STATUS,F
+0215    0051            ; 68: Low PORTB.2
+0216    0051    1106    	BCF PORTB,2
+0217    0052    1683    	BSF STATUS,RP0
+0218    0053    1106    	BCF TRISB,2
+0219    0054    1283    	BCF STATUS,RP0
+0220    0055            ; 69: High PORTB.3
+0221    0055    1586    	BSF PORTB,3
+0222    0056    1683    	BSF STATUS,RP0
+0223    0057    1186    	BCF TRISB,3
+0224    0058    1283    	BCF STATUS,RP0
+0225    0059            ; 70: Endif
+0226    0059    301F    L0007:	MOVLW 0x1F
+0227    005A    0583    	ANDWF STATUS,F
+0228    005B            ; 71: High PORTB.4
+0229    005B    1606    	BSF PORTB,4
+0230    005C    1683    	BSF STATUS,RP0
+0231    005D    1206    	BCF TRISB,4
+0232    005E    1283    	BCF STATUS,RP0
+0233    005F            ; 72: Low PORTB.5
+0234    005F    1286    	BCF PORTB,5
+0235    0060    1683    	BSF STATUS,RP0
+0236    0061    1286    	BCF TRISB,5
+0237    0062    1283    	BCF STATUS,RP0
+0238    0063            ; 73: 
+0239    0063            ; 74: TRISD.2 = 1
+0240    0063    1683    	BSF STATUS,RP0
+0241    0064    1508    	BSF 0x08,2
+0242    0065    1283    	BCF STATUS,RP0
+0243    0066            ; 75: Else
+0244    0066    2871    	GOTO L0008
+0245    0067    301F    L0005:	MOVLW 0x1F
+0246    0068    0583    	ANDWF STATUS,F
+0247    0069            ; 76: Low PORTB.4
+0248    0069    1206    	BCF PORTB,4
+0249    006A    1683    	BSF STATUS,RP0
+0250    006B    1206    	BCF TRISB,4
+0251    006C    1283    	BCF STATUS,RP0
+0252    006D            ; 77: High PORTB.5
+0253    006D    1686    	BSF PORTB,5
+0254    006E    1683    	BSF STATUS,RP0
+0255    006F    1286    	BCF TRISB,5
+0256    0070    1283    	BCF STATUS,RP0
+0257    0071            ; 78: Endif
+0258    0071    301F    L0008:	MOVLW 0x1F
+0259    0072    0583    	ANDWF STATUS,F
+0260    0073            ; 79: '--------------
+0261    0073            ; 80: 
+0262    0073            ; 81: WaitMs 1000
+0263    0073    30E8    	MOVLW 0xE8
+0264    0074    00A0    	MOVWF R0L
+0265    0075    3003    	MOVLW 0x03
+0266    0076    00A1    	MOVWF R0H
+0267    0077    207B    	CALL W001
+0268    0078            ; 82: 'TRISD.3 = 1
+0269    0078            ; 83: 'TRISD.2 = 1
+0270    0078            ; 84: Goto startprogram
+0271    0078    281B    	GOTO L0001
+0272    0079            ; 85: End
+0273    0079    2879    L0009:	GOTO L0009
+0274    007A            ; 86: '================================
+0275    007A            ; End of program
+0276    007A    287A    L0010:	GOTO L0010
+0277    007B            ; Waitms Routine
+0278    007B    08A0    W001:	MOVF R0L,F
+0279    007C    1903    	BTFSC STATUS,Z
+0280    007D    2886    	GOTO W002
+0281    007E    208D    	CALL W003
+0282    007F    03A0    	DECF R0L,F
+0283    0080    0000    	NOP
+0284    0081    0000    	NOP
+0285    0082    0000    	NOP
+0286    0083    0000    	NOP
+0287    0084    0000    	NOP
+0288    0085    287B    	GOTO W001
+0289    0086    08A1    W002:	MOVF R0H,F
+0290    0087    1903    	BTFSC STATUS,Z
+0291    0088    0008    	RETURN
+0292    0089    208D    	CALL W003
+0293    008A    03A1    	DECF R0H,F
+0294    008B    03A0    	DECF R0L,F
+0295    008C    287B    	GOTO W001
+0296    008D    300C    W003:	MOVLW 0x0C
+0297    008E    00A5    	MOVWF R2H
+0298    008F    0BA5    W004:	DECFSZ R2H,F
+0299    0090    288F    	GOTO W004
+0300    0091    0000    	NOP
+0301    0092    0000    	NOP
+0302    0093    3012    	MOVLW 0x12
+0303    0094    00A2    	MOVWF R1L
+0304    0095    0BA2    W005:	DECFSZ R1L,F
+0305    0096    289C    	GOTO W006
+0306    0097    209E    	CALL W007
+0307    0098    209E    	CALL W007
+0308    0099    0000    	NOP
+0309    009A    0000    	NOP
+0310    009B    0008    	RETURN
+0311    009C    209E    W006:	CALL W007
+0312    009D    2895    	GOTO W005
+0313    009E    300D    W007:	MOVLW 0x0D
+0314    009F    00A4    	MOVWF R2L
+0315    00A0    0BA4    W008:	DECFSZ R2L,F
+0316    00A1    28A0    	GOTO W008
+0317    00A2    0000    	NOP
+0318    00A3    0008    	RETURN
+0319    00A4            ; End of listing
+0320    00A4            	END
+---------------------------------------------
+Number of errors = 0

@@ -1,0 +1,2 @@
+TRISB = 0
+High PORTB.7

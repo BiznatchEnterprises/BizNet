@@ -1,0 +1,39 @@
+---------------------------------------------
+PIC ASSEMBLER LISTING
+Line    Address Opcode  Instruction
+---------------------------------------------
+0001    0000            ; Begin
+0002    0000            	R0L EQU 0x20
+0003    0000            	R0H EQU 0x21
+0004    0000            	R1L EQU 0x22
+0005    0000            	R1H EQU 0x23
+0006    0000            	R2L EQU 0x24
+0007    0000            	R2H EQU 0x25
+0008    0000            	R3L EQU 0x26
+0009    0000            	R3H EQU 0x27
+0010    0000            	R4L EQU 0x28
+0011    0000            	R4H EQU 0x29
+0012    0000            	R5L EQU 0x2A
+0013    0000            	R5H EQU 0x2B
+0014    0000            	ORG 0x0000
+0015    0000    118A    	BCF PCLATH,3
+0016    0001    120A    	BCF PCLATH,4
+0017    0002    2805    	GOTO L0001
+0018    0003            	ORG 0x0004
+0019    0004    0009    	RETFIE
+0020    0005            L0001:
+0021    0005            ; 1: TRISB = 0
+0022    0005    1683    	BSF STATUS,RP0
+0023    0006    0186    	CLRF 0x06
+0024    0007    1283    	BCF STATUS,RP0
+0025    0008            ; 2: High PORTB.7
+0026    0008    1786    	BSF PORTB,7
+0027    0009    1683    	BSF STATUS,RP0
+0028    000A    1386    	BCF TRISB,7
+0029    000B    1283    	BCF STATUS,RP0
+0030    000C            ; End of program
+0031    000C    280C    L0002:	GOTO L0002
+0032    000D            ; End of listing
+0033    000D            	END
+---------------------------------------------
+Number of errors = 0
