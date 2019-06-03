@@ -1,0 +1,157 @@
+-------------------------------
+---- BIZNET TOKEN PROTOCOL ----
+---- BIznatch Enterprises  ----
+----      Aug 6 2004       ----
+       ***AN OLD DRAFT***
+-------------------------------
+
+
+
+TOKEN Format: PIN HIGH 11111111 <BARCODE><PACKETLENGTH><PACKET> 11111111 PIN LOW
+
+------------------------------
+HIGH (START TRANSMISSION)
+8 Transmission Break BITS
+<BARCODE> sent in 8 BITs
+<PACKETLENGTH> sent in 8 BITs
+<PACKET> sent in 8-2032 BITS
+8 Transmission Break BITS
+LOW (TRANSMISSION RECEIVED FRM LCD, END TRANSMISSION)
+------------------------------
+MAX per token: 2056 BITS
+------------------------------
+
+BARCODE = 00000001  (Identifier BYTE)
+PACKETLENGTH = 00000001 (# of Data Bytes in Packet)
+PACKET = <BYTE1 = 8bits = char1><BYTE2 = 8bits = char2><BYTE3 = 8bits = char3> (BYTES ONE AFTER ANOTHER)
+
+
+
+
+HIGH 11111111 00000001 000000011 10101011 11101011 11010111 11111111 LOW
+   BARCODE: 1 PACKLEN: 3 BYTE1: 171 BYTE2: 215
+
+BARCODE: Min 1 max 254
+packlen min 1 max 254
+bytes: min 0 max 254
+
+LCDCHANxx = 1-3 whatever one is set to LOW (Ready To Transmit)
+-------DATA TRANSMISSION TO LCD PROCEDURE------
+1. Bud module sets LCDCHANxx to HIGH
+2. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+4. LCD puts LCDCHANxx value in bit 0 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 1 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 2 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 3 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 4 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 5 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 6 of inbuff1 byte if LCDchan <> 0
+4. Bud module sets LCDCHANxx to 1.
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 7 of inbuff1 byte if LCDchan <> 0
+9. BUD module sets LCDCHANxx to bit0 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+9. LCD check to see if inbuff = 255 then it reads value of LCDCHANxx ands puts it into inbuff1.0
+9. BUD module sets LCDCHANxx to bit1 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 1 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit2 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 2 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit3 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 3 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit4 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 4 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit5 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 5 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit6 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 6 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit7 of BARCODE
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 7 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit0 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+8. LCD BARCODE = inbuff1
+9. LCD check to see if inbuff1 <> 255 and <> 0 then it reads value of LCDCHANxx and puts it into inbuff1.0
+9. BUD module sets LCDCHANxx to bit1 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 1 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit2 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 2 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit3 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 3 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit4 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 4 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit5 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 5 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit6 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 6 of inbuff1 byte
+9. BUD module sets LCDCHANxx to bit7 of PACKLEN
+0. BUD MODULE + LCD WAIT 2ms
+6. LCD puts LCDCHANxx value in bit 7 of inbuff1 byte
+8  LCD PACKETLENGTH = inbuff1
+9. LCD check to see if inbuff1 <> 255 and <> 0 then it goes into a loop for num of PACKLEN
+9. BUD module goes into a loop for num of PACKETLENGTH
+4. LCD clears databuff1(BYTExx)
+6. BUD module sets LCDCHANxx to bit 0 of BYTExx
+4. LCD databuff1(BYTExx).0 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 1 of BYTExx
+4. LCD databuff1(BYTExx).1 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 2 of BYTExx
+4. LCD databuff1(BYTExx).2 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 3 of BYTExx
+4. LCD databuff1(BYTExx).3 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 4 of BYTExx
+4. LCD databuff1(BYTExx).4 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 5 of BYTExx
+4. LCD databuff1(BYTExx).5 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 6 of BYTExx
+4. LCD databuff1(BYTExx).6 = LCDCHANxx
+0. BUD MODULE + LCD WAIT 2ms
+6. BUD module sets LCDCHANxx to bit 7 of BYTExx
+4. LCd databuff1(BYTExx).7 = LCDCHANxx
+4. LCD exits loop
+4. LCD SETS LCDCHANxx LOW
+4. LCD PROCESSES DATA
+-------DATA TRANSMISSION TO LCD PROCEDURE------
+
+
+------WIRES--------------
+pw
+gnd
+LCDCHAN1 (out to network)
+LCDCHAN2 (out to network)
+LCDCHAN3 (out to network)
+BUDCHAN1 (in frm network)
+BUDCHAN2 (in frm network)
+BUDCHAn3 (in frm network)
+------------------------
+
